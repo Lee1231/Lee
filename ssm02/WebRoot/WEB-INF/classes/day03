@@ -1,0 +1,19 @@
+springmvc拦截器：
+	1.定义拦截器：实现HandlerInterceptor接口
+	实现方法：
+		preHandle 执行handler之前
+		postHandle 执行handler之后，返回ModelAndView之前
+		afterCompletion 执行完handler之后
+	2.配置拦截器：
+		springmvc.xml
+		<mvc:interceptors>  
+       	 	<mvc:interceptor> 
+       	 		//被拦截的资源 
+            	<mvc:mapping path="/com/ssm02/User/controller/add*"/>
+            	//指定拦截器
+            	<bean class="com.ssm02.User.controller.MyHandlerInterceptor"/>  
+        	</mvc:interceptor>  
+    	</mvc:interceptors> 
+    	
+    	
+    	
